@@ -46,29 +46,29 @@ export default function ChartPage() {
     }
 
   return (
-    <div className={styles.container}>
-    <h1 className={styles.title} >이엘 뮤직 Top 100 차트</h1>
-    <form onSubmit={handleSubmit} className={styles.form}>
-        <label htmlFor="searchId">
-        <input type="text" className={styles.inputField} id="searchId" name="searchList" placeholder="원하시는 음원을 입력해주세요." onChange={handlerInputValue} />
-        <button type="submit" className={styles.inputButton}>검색</button>
-        </label>
-    </form>
-    <div className={styles.sortButton}>
-    <button id="ascending" onClick={sortChart}>오름차순</button>
-    <button id="descending" onClick={sortChart}>내림차순</button>
-    </div>
-    
-    <div>
-        {chartList && chartList.map((data) => (
-        <Link key={data.id.attributes["im:id"]} to = {`/detail/${data.id.attributes["im:id"]}`} state={{ music: data }}>
-        <div className={styles.chartContainer}>
-            <img src={data["im:image"][0].label}  alt="차트사진"/>
-            <h1 className={styles.chartTitle}>{data.title.label}</h1>
+    <main className={styles.container}>
+        <h1 className={styles.title} >이엘 뮤직 Top 100 차트</h1>
+        <form onSubmit={handleSubmit} className={styles.form}>
+            <label htmlFor="searchId">
+            <input type="text" className={styles.inputField} id="searchId" name="searchList" placeholder="원하시는 음원을 입력해주세요." onChange={handlerInputValue} />
+            <button type="submit" className={styles.inputButton}>검색</button>
+            </label>
+        </form>
+        <div className={styles.sortButton}>
+            <button id="ascending" onClick={sortChart}>오름차순</button>
+            <button id="descending" onClick={sortChart}>내림차순</button>
         </div>
-        </Link>
-    ))}
-    </div>
-    </div>
+    
+        <ul>
+            {chartList && chartList.map((data) => (
+                <Link key={data.id.attributes["im:id"]} to = {`/detail/${data.id.attributes["im:id"]}`} state={{ music: data }}>
+                    <li className={styles.chartContainer}>
+                        <img src={data["im:image"][0].label}  alt={`${data["im:name"].label} 앨범 이미지`} />
+                        <h1 className={styles.chartTitle}>{data.title.label}</h1>
+                    </li>
+                </Link>
+            ))}
+        </ul>
+    </main>
   )
 }
