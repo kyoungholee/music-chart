@@ -1,0 +1,15 @@
+.container{
+    padding: 24px;
+}
+.info {
+    font-size: 2rem;
+}
+.price {
+    font-size: 1.5rem;
+}
+.song {
+    display: block;
+}
+.artist{
+
+}
