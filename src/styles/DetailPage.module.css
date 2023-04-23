@@ -1,15 +1,19 @@
 .container{
     padding: 24px;
 }
+.backSpace{
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 8px
+}
 .info {
     font-size: 2rem;
+    margin-top: 27px;
 }
-.price {
+.image{
+    margin: 14px 0 14px 0;
+}
+.price, .song, .artist, .day {
     font-size: 1.5rem;
-}
-.song {
-    display: block;
-}
-.artist{
-
+    margin-bottom: 4px;
 }
