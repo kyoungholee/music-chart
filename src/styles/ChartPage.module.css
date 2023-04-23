@@ -1,0 +1,47 @@
+.container {
+    padding: 24px;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.inputField,
+.inputButton {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.inputField{
+    margin-right: 10px;
+    width: 34%;
+}
+
+.sortButton {
+    display: flex;
+    justify-content: flex-end;
+}
+.sortButton button:first-child {
+    margin-right: 6px;
+}
+
+.sortButton button{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 9px;
+}
+.chartContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.chartContainer img {
+    margin-right: 16px;
+}
